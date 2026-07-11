@@ -1,0 +1,31 @@
+
+
+		To create 
+
+Material master :- 
+		
+		Industry Sector
+		Material Type
+
+vendor master:- 
+
+		Company Code
+		Purchase org 
+		Account Group
+		
+Business Partner:-
+
+		Company Code
+		Purchase org
+		
+purchase Info Record:-
+		
+		Supplier
+		material
+		Purchase Org
+		Plant
+		
+Source List :-
+
+		material
+		Plant
