@@ -1,0 +1,271 @@
+SAP :- 
+  Systems, Applications and prodcuts in data processing
+  
+ERP :- Enterprise  
+	   Resource   
+	   Planning
+	   
+ECC :- Enterprise Central Component
+
+SAP MM (material management)
+     
+	 SAP MM (Materials Management) is an SAP module used to manage procurement (purchasing), inventory, and material management within an organization. 
+	 It ensures that the right materials are available at the right time and at the right cost.
+
+     In simple terms, SAP MM manages the complete process of buying materials, receiving them, storing them, and paying the vendor.
+	 
+		Idenitfing Requiment
+		Sourcing
+		procuring
+		maintaining the inventory
+
+PROJECT :-
+Implemtation        -  SAP is implemented for the first time in a company.
+Support   			-  Maintaining and fixing issues in a live system.
+Roleout				-  Existing SAP solution is deployed to new locations/business units.
+Upgrade				-  Upgrading SAP from one version to another.
+
+ Implemtation :-
+ ASAP :- Accelerated SAP
+      
+	  1) Project Preparation
+	  2) Business Blueprint
+	  3) Realization
+	  4) Final Preparation
+	  5) Go-Live
+	  6) Support
+	
+	1) Project Preparation :- 
+		
+		Project Scoping / Deliverables
+		Project Deadline
+		Number of business process go-live
+		Number of modules 
+		Interfacs list
+		Resource Planning
+		
+	2) Business Blueprint
+		
+		Business WorkShopes
+		AS-IS(Existing Business Process)
+		To-Be(New Business Process)
+		GAPS
+		Business Signoff and Reviews
+		
+	3) Realization
+		
+		Standard Configurations
+		Write FSD(Functional Specification Document) for development objects
+		Testing
+		TR(Transport Request) List
+		Move changes to quality system
+		
+	4) Final Preparation
+		
+		Testing Internally
+		User training
+		UAT(User Acceptance Testing)
+		Cutover activities
+		Data migration
+		
+	5) Go-Live
+
+		Issues and errors reporting
+		defect resolution
+		
+	6) Support
+
+		issues reporting
+		issues resolution
+		
+		
+ORGANIZATION STRUCTURE (OR) ENTERPRISE STRUCTURE
+
+			COMPANY							(T-code)
+			COMPANY CODE			--->	OX15				
+			PLANT					--->	OX10 --->	T001W
+			STORAGE LOCATION		--->	OX09 --->	T001L
+			PURCHASE ORGANIZATION	--->	OX08 --->	T024E
+			PURCHASE GROUP			--->	OME4 --->	T024
+			
+					
+			EC01    --->  For checking structure
+			SE16N   --->   For Tables
+			
+			
+Company Code          ---> Company financial transactions
+						   profit/loss
+				           Auditing
+				  
+Plant                 ---> Place where operational or manufacting activities happening.
+
+Storage location      ---> Physically where stocks or gods are stored.
+
+Purchase organization ---> Team who are involved in the purchasing activities.
+
+Purchase group        ---> Single person within the purchasing team.
+
+
+Assignment
+
+1)Assign Company Code to Company                   ---> OX16
+2)Assign Plant to Company Code                     ---> OX18
+3)Assign Purchasing Organization to Plant          ---> OX17 
+4)Assign Purchasing Organization to Company Code   ---> OX01
+
+
+
+1) PLANTS  ----->  COMPANY CODE
+
+--> One Company code can have multiple plants
+--> One Plant cannot be assigned to multiple Company codes
+
+2) STORAGE LOCATION ----->  PLANT
+
+--> One Plant can have multiple storage locations
+--> One Storage location can be assigned to multiple Plants
+
+3) PURCHASE ORGANIZATION  ----->  COMPANY CODE , PLANT		
+
+--> One Purchase Organization can be assigned to multiple Company codes ( Not directly , but for plants).
+-->	One Company code can have multiple Purchase Organizations.
+--> One Purchase Organization can be assigned to multiple Plants.
+--> One Plant can have multiple Purchase Organizations.
+
+
+ MASTER DATA 
+
+1) Material Master
+2) Vendor master/ Business partner
+3) Purchase Info record
+4) Source list
+5) Quota Arrgangement
+6) Service Master  	   		  
+
+1) Material Master :- 
+    Material master is a data that contains all materials details that any organization or Plant  PRODUCE, BUY, SELL.
+
+	MM01  --->  To create
+	MMO2  --->  To change
+	MM03  --->  To display
+	
+	MM04  --->  Change Logs
+	MMSC  --->  To extand material to SL
+	MM50  --->  To extand material views
+	MM60  --->  Material list at plant level
+	MMAM  --->  To Change Material Type
+	
+	
+	Configurations :-
+	
+	Number Range          --->  MMNR
+	Material type         --->  OMS2
+	Industry sector		  --->  OMS3	
+	Material Group		  --->  OMSF
+	Purchase Value Key    --->  OME1
+	Unit of Measure       --->  CUNI
+	
+	
+	Valuation level :- 
+	
+	plant level valuation 
+	Company Code level valuation
+	
+	
+	Tables
+	
+	MARA      --->  Client Level Views
+	MAKT      --->  Description
+	MARC      --->  Plant Level
+	MARD	  --->  Storage Location Level
+	MBEW      --->  Material Valuation
+	
+	
+2)Vendor Master :-
+    Vendor Master is a Master data which stroes vendor data like    --->  XK01
+				--->  Vendor Master 				
+				--->  Vendor address and Communication
+				--->  Vendor Bank details
+				--->  Vendor Payment terms							--->  OBB8
+				--->  Vendor Incoterms								--->  OVSG
+				--->  Withholding Tax
+				--->  Purchasing Controls
+	
+	Payment teams  --->  defines the deadline for vendor payment for invoice
+	Incoterms      --->  Strategy which defines the transportion responsibility, Payment mode, Insurance and freight
+	
+	Account Groups  --->
+				
+				Controls  --->  Screen Layouts
+						  --->  Number Ranges
+						  --->  partner functions
+						  --->  Type of vendor     ---> Regular vendor
+												   ---> One time Vendor
+												   ---> Import Vendor
+												   ---> InterCompany Vendor
+						  
+						  
+Business Partner :-
+	
+	A Business Partner is a central master data object in SAP S/4HANA that represents a person, organization, or group with whom 
+	the company does business. A Business Partner can perform multiple roles, such as Supplier and Customer.                        ---> BP
+	
+	
+	     General role  ---> 000000
+		 Accounting    ---> FLVN00
+		 Purchasing    ---> FLVN01
+	   
+	   
+	   Tables :-
+	   
+	   LFA1  --->  Vendor General data
+	   LFB1  --->  Vendor Company Code
+	   LFM1  --->  Vendor Purchasing Data
+	   
+	   
+	   OBD3  --->  Vendor Account Group and Screen Layouts
+	   FS03  --->  G/L Account
+	   OBAS  --->  Assign number range to vendor account group
+	   
+	   
+3)Purchase Info Record :-
+
+		Purchase Info Record is a master data which contains purchasing information for a material and vendor combination
+		
+		
+		---> Standard (Optional)
+		---> Subcontracting (Optional)
+		---> Consignment (Mandatory)
+		---> Pipeline (Mandatory)
+		
+		
+		Create  ---> ME11
+		Change  ---> ME12
+		Display ---> ME13
+		
+		Tables :-
+		
+		EINA  ---> Header
+		EINE  ---> Item
+		
+
+4)Source List :- 
+
+		A Source List is a list of approved sources of supply for a material and plant, maintained for a specific validity period.
+			
+		Create  ---> ME01
+		Change  ---> ME02
+		Display ---> ME03
+		
+		Table  ---> EORD
+		
+5)Service master :-
+
+		A Service Master is a master data object in SAP MM that stores information about services that a company purchases 
+		from vendors, instead of physical materials.
+
+		create  ---> AC01
+
+		Table   ---> ASMD
+		
+		
