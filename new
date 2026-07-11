@@ -7,7 +7,7 @@ SAP :-
   Companies use SAP to:
 
 	Manage financial transactions
-    Handle employee data and payroll
+	Handle employee data and payroll
 	Track inventory and supply chains
 	Manage customer relationships
 	Automate business processes
@@ -43,6 +43,11 @@ Upgrade				-  Upgrading SAP from one version to another.
 
  Implemtation :-
  ASAP :- Accelerated SAP
+ 
+	ASAP (Accelerated SAP) is SAP's implementation methodology that provides a step-by-step approach, templates, tools, and
+	best practices for implementing SAP solutions.
+	
+	There are 5 phases in the ASAP methodology:
       
 	  1) Project Preparation
 	  2) Business Blueprint
@@ -284,4 +289,17 @@ Business Partner :-
 
 		Table   ---> ASMD
 		
+6)Quota Arrgangement :-
+			
 		
+		
+GR-Based IV:-
+		
+	GR-Based IV stands for Goods Receipt-Based Invoice Verification.
+
+     It is a feature in SAP MM where the vendor invoice is verified against the Goods Receipt (GR) instead of only against the Purchase Order (PO).
+
+     This ensures that the vendor is paid only for the quantity of goods that has actually been received.
+
+
+
