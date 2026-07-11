@@ -29,3 +29,13 @@ Source List :-
 
 		material
 		Plant
+		
+GR-Based IV:-
+		
+	GR-Based IV stands for Goods Receipt-Based Invoice Verification.
+
+     It is a feature in SAP MM where the vendor invoice is verified against the Goods Receipt (GR) instead of only against the Purchase Order (PO).
+
+     This ensures that the vendor is paid only for the quantity of goods that has actually been received.		
+
+
